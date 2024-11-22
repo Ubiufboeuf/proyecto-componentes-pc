@@ -1,0 +1,50 @@
+---
+import Header from "@/components/Header.astro"
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.svg">
+		<title>{(title) ? `${title} - Componentes PC` : "Falta título en el documento"}</title>
+		<link href="/src/styles/Water.css" rel="stylesheet">
+		<style is:global>
+			:root {
+				font-family: system-ui, sans-serif;
+				font-size: 17px;
+				scroll-behavior: smooth;
+			}
+			*, *::before, *::after {
+				box-sizing: border-box;
+			}
+			main {
+				scrollbar-gutter: stable both-edges;
+			}
+			p {
+				text-wrap: pretty;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				text-wrap: balance;
+			}
+			h1 {
+				line-height: 40px;
+				padding: 24px 0 16px;
+				font-size: 36px;
+				font-weight: 700;
+				margin-inline: auto;
+			}
+		</style>
+	</head>
+	<body class="h-screen w-screen overflow-hidden flex flex-col items-center">
+		<Header />
+		<slot />
+	</body>
+</html>

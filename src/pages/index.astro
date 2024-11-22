@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SearchBar from "@/components/SearchBar.tsx"
+import ComponentsPC from "@/components/ComponentsPC.tsx"
+---
+
+<Layout title="Inicio">
+	<main class="w-full h-full max-h-full flex flex-col items-center overflow-y-auto">
+		<section class="w-full h-20 flex items-center justify-center">
+			<SearchBar />
+		</section>
+		<section class="w-full h-[calc(100%-80px)] min-h-fit grid">
+			<ComponentsPC client:load />
+		</section>
+	</main>
+</Layout>
