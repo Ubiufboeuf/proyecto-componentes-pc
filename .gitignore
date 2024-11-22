@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # creo que puedo quitar...
 .vercel/
+# Local Netlify folder
+.netlify

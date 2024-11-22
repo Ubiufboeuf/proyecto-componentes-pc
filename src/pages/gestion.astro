@@ -1,29 +1,9 @@
-<!-- ---
-import { db, Procesador_Intel } from 'astro:db';
+---
 import Layout from "@/layouts/Layout.astro";
 
-async function getComponents() {
-  const componentes = {
-    procesadores: []
-  }
 
-  const intel = await db.select().from(Procesador_Intel)
-  // console.log({ intel })
-
-  componentes.procesadores.push(intel)
-  
-  return componentes
-}
-
-const componentes = await getComponents()
-console.log(componentes.procesadores)
 ---
 
 <Layout title="Gestión">
-  {componentes.procesadores.map((cpu) => {
-    console.log("cpu xd: ", cpu)
-    return (
-      <article>{cpu[1].brand}</article>
-    )
-  })}
-</Layout> -->
+  gestion
+</Layout>

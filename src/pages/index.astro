@@ -2,6 +2,9 @@
 import Layout from "@/layouts/Layout.astro"
 import SearchBar from "@/components/SearchBar.tsx"
 import ComponentsPC from "@/components/ComponentsPC.tsx"
+import { getProcesadores } from "@/services/procesadores"
+
+await getProcesadores()
 ---
 
 <Layout title="Inicio">
