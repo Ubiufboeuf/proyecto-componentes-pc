@@ -12,6 +12,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   integrations: [tailwind(), react()],
 
-  output: "hybrid",
-  adapter: vercelServerless()
+  output: "server",
+  adapter: cloudflare()
 });
