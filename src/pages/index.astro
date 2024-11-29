@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import SearchBar from "@/components/SearchBar.tsx"
-import ComponentsPC from "@/components/ComponentsPC.tsx"
-import { getProcesadores } from "@/services/procesadores"
+import { Componente } from "@/components/Componente.jsx"
+import { getProcesadores } from "@/db/client.js"
 
 await getProcesadores()
 ---
@@ -12,8 +12,10 @@ await getProcesadores()
 		<section class="w-full h-20 flex items-center justify-center">
 			<SearchBar />
 		</section>
-		<section class="w-full h-[calc(100%-80px)] min-h-fit grid">
-			<ComponentsPC client:load />
+		<section class="w-full h-[calc(100%-80px)] min-h-fit flex flex-col">
+			<Componente client:only="react">
+				<p slot="fallback" id="no-search-text" class="px-4 max-w-xl mx-auto text-[#aaaa] mt-4">Por ahora puedes buscar procesadores de Intel, con el tiempo iré añadiendo más componentes.</p>
+			</Componente>
 		</section>
 	</main>
 </Layout>

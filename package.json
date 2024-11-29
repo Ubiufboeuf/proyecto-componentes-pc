@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --remote",
     "host": "astro dev --host",
     "dev-remote": "astro dev --remote",
     "dev-remote-host": "astro dev --remote --host",
